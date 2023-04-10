@@ -1,0 +1,14 @@
+<h1>
+Exchange Rates
+</h1>
+<form (ngSubmit)="onSubmit()" #exchangeRateForm="ngForm">
+<mat-form-field appearance="fill">
+    <mat-label>Select a month</mat-label>
+    <mat-select [(ngModel)]="selectedMonth" name="selectedMonth" required>
+    <mat-option *ngFor="let month of months" [value]="month">
+        {{month | dateTimeFromJsDate | dateTimeToFormat:'yyyy/MM'}}
+    </mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-button color="primary" type="submit" [disabled]="!exchangeRateForm.form.valid">Submit</button>
+</form>

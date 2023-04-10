@@ -1,0 +1,9 @@
+<div style="text-align:center">
+  <month-rate-query (monthSelected)="onMonthSelected($any($event))"></month-rate-query>  
+</div>
+<div class="spinner">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+<div *ngIf="hasResults && !loading" class="results">
+  <month-rate-results [month]="selectedMonth" [results]="results"></month-rate-results>
+</div>
